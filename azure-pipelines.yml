@@ -32,3 +32,15 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+# copiado do video
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.*'
+    targetFolder: '$(build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'MobEAD'
+    pathtoPublish: 'd:\a\1\a'
+
